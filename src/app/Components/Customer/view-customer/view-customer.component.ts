@@ -4,12 +4,12 @@ import { APIResponceModel, ICutomerList } from '../../../Interface/customer-list
 import { TableModule } from 'primeng/table';
 import { CommonModule } from '@angular/common';
 import { ButtonModule } from 'primeng/button';
-import { FieldsetModule } from 'primeng/fieldset';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-view-customer',
   standalone: true,
-  imports: [TableModule, CommonModule, ButtonModule, FieldsetModule],
+  imports: [TableModule, CommonModule, ButtonModule, RouterLink],
   templateUrl: './view-customer.component.html',
   styleUrl: './view-customer.component.css'
 })

@@ -1,7 +1,9 @@
 <div class="card custom-padding">
     <div class="flex justify-content-between align-items-center p-mb-3">
       <h2 class="p-mr-2">Customer List</h2>
-      <button pButton pRipple class="p-button-primary" icon="pi pi-plus" label="Add Customer"></button>
+      <a routerLink="AddCustomer" >
+        <button pButton pRipple class="p-button-primary" icon="pi pi-plus" label="Add Customer"></button>
+      </a>
     </div>
     
     <p-table [value]="customerList" class="p-mb-3" [paginator]="true" [rows]="5">

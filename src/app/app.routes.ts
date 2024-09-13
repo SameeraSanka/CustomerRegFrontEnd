@@ -3,5 +3,6 @@ import { ViewCustomerComponent } from './Components/Customer/view-customer/view-
 import { AddCustomerComponent } from './Components/Customer/add-customer/add-customer.component';
 
 export const routes: Routes = [
-
+    {path: '', component: ViewCustomerComponent},
+    {path: 'AddCustomer', component: AddCustomerComponent}
 ];
