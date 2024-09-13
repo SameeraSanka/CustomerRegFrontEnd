@@ -1,0 +1,39 @@
+<div class="card custom-padding">
+    <div class="flex justify-content-between align-items-center p-mb-3">
+      <h2 class="p-mr-2">Customer List</h2>
+      <button pButton pRipple class="p-button-primary" icon="pi pi-plus" label="Add Customer"></button>
+    </div>
+    
+    <p-table [value]="customerList" class="p-mb-3" [paginator]="true" [rows]="5">
+      <ng-template pTemplate="header">
+        <tr>
+          <th>Full Name</th>
+          <th>Phone Number</th>
+          <th>Email</th>
+          <th>Address</th>
+          <th>City</th>
+          <th>Postal Code</th>
+          <th>Action</th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-customer>
+        <tr>
+          <td>{{ customer.fullName }}</td>
+          <td>{{ customer.phoneNumber }}</td>
+          <td>{{ customer.email }}</td>
+          <td>{{ customer.address }}</td>
+          <td>{{ customer.city }}</td>
+          <td>{{ customer.postalCode }}</td>
+          <td>
+            <button pButton pRipple class="p-button-success">
+              <i class="pi pi-pen-to-square"></i>
+            </button>
+            <button pButton pRipple class="p-button-danger">
+              <i class="pi pi-times-circle"></i>
+            </button>
+          </td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </div>
+  
