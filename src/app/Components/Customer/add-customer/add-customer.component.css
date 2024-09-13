@@ -1,0 +1,10 @@
+:host >>> .CustomerForm{
+    width: 40% !important
+}
+
+:host >>> .inputOne{
+    width: 60% !important
+}
+.custom-padding {
+    padding: 5rem; /* 48px */
+  }
