@@ -27,10 +27,12 @@
           <td>{{ customer.city }}</td>
           <td>{{ customer.postalCode }}</td>
           <td>
-            <button pButton pRipple class="p-button-success">
-              <i class="pi pi-pen-to-square"></i>
-            </button>
-            <button pButton pRipple class="p-button-danger">
+            <a [routerLink]="['/UpdateCustomer', customer.id]" [state]="{ customer: customer }">
+              <button pButton pRipple class="p-button-success">
+                <i class="pi pi-pen-to-square"></i>
+              </button>
+            </a>
+            <button pButton pRipple class="p-button-danger" (click)="deleteCustomer(customer.id)">
               <i class="pi pi-times-circle"></i>
             </button>
           </td>

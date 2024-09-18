@@ -33,13 +33,15 @@ export class SweetAlertService {
     });
   }
 
-  confirmDelete(message: string = 'Are you sure you want to delete?', confirmButtonText: string = 'Yes, delete it!') {
+  confirmDelete(message: string = 'Are you sure you want to delete?', confirmButtonText: string = 'Yes, delete it!'): Promise<boolean> {
     return Swal.fire({
       title: message,
       icon: 'warning',
       showCancelButton: true,
       confirmButtonText: confirmButtonText,
       cancelButtonText: 'No, keep it'
+    }).then((result) => {
+      return result.isConfirmed;
     });
   }
 }
