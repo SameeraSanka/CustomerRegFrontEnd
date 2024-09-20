@@ -5,6 +5,7 @@ import { TableModule } from 'primeng/table';
 import { CommonModule } from '@angular/common';
 import { ButtonModule } from 'primeng/button';
 import { RouterLink } from '@angular/router';
+import { SweetAlertService } from '../../../Servises/SweetAlert/sweet-alert.service';
 
 @Component({
   selector: 'app-view-customer',
@@ -18,22 +19,36 @@ export class ViewCustomerComponent implements OnInit {
 customerList: ICutomerList[] = [];
 
 customerService = inject(MainService);
+sweetAlertService = inject(SweetAlertService)
   ngOnInit(): void {
    this.loadCustomers();
-
-  //  this.customerService.customerAdded.subscribe(() => {
-  //   this.loadCustomers();
-  // });
   }
 
   
   loadCustomers(){
     this.customerService.getCustomers().then((response: APIResponceModel) => {
-      console.log('Customer data:', response.data); 
       this.customerList = response.data;
-    }).catch((error) => {
-      console.error('Error fetching customers:', error);
     });
   }
+
+  deleteCustomer(id: number) {
+    this.sweetAlertService.confirmDelete().then((isDelete) => {
+      if (isDelete) {
+        this.customerService.deleteCustomer(id).then((response: APIResponceModel) => {
+          if (response.isSuccess) {
+            this.sweetAlertService.success('Customer deleted successfully');
+            // Update customer list by removing the deleted customer
+            this.customerList = this.customerList.filter(customer => customer.id !== id);
+          } else {
+            this.sweetAlertService.error('Customer not deleted');
+          }
+        }).catch((error) => {
+          this.sweetAlertService.error('An error occurred while deleting the customer');
+          console.error(error);
+        });
+      }
+    });
+  }
+  
 
 }

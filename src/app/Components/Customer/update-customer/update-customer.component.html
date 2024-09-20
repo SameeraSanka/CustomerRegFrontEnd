@@ -1,0 +1,167 @@
+<p-card styleClass="CustomerForm " class="flex justify-content-center pt-2">
+    <ng-template pTemplate="header">
+      <h2 class="text-center text-3xl font-bold mb-4 text-primary">
+        Update Customer
+      </h2>
+    </ng-template>
+    <form [formGroup]="userForm" >
+      <!-- First Name and Last Name Fields -->
+      <div class="grid">
+        <div class="col-6">
+          <div class="field">
+            <label for="firstName" class="block">First Name</label>
+            <input
+              type="text"
+              pInputText
+              placeholder="First Name"
+              formControlName="firstName"
+              class="w-12"
+            />
+            <!-- <small
+              class="p-error block"
+              *ngIf="
+                useForm.get('firstName')?.invalid && useForm.get('firstName')?.dirty
+              "
+              >First Name is Required</small
+            > -->
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="field">
+            <label for="lastName" class="block">Last Name</label>
+            <input
+              type="text"
+              pInputText
+              placeholder="Last Name"
+              formControlName="lastName"
+              class="w-12"
+            />
+            <!-- <small
+              class="p-error block"
+              *ngIf="
+                useForm.get('lastName')?.invalid && useForm.get('lastName')?.dirty
+              "
+              >Last Name is Required</small
+            > -->
+          </div>
+        </div>
+      </div>
+  
+      <!-- Contact Details -->
+      <h3>Contact Details</h3>
+      <div class="grid">
+        <div class="col-6">
+          <div class="field">
+            <label for="phoneNumber" class="block">Phone Number</label>
+            <input
+              type="text"
+              pInputText
+              placeholder="Phone Number"
+              formControlName="phoneNumber"
+              class="w-12"
+            />
+            <!-- <small
+            class="p-error block"
+            *ngIf="
+              useForm.get('phoneNumber')?.invalid && useForm.get('phoneNumber')?.dirty
+            "
+            >Phone Number is Required</small
+          > -->
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="field">
+            <label for="email" class="block">Email</label>
+            <input
+              type="email"
+              pInputText
+              placeholder="Email"
+              formControlName="email"
+              class="w-12"
+            />
+            <!-- <small
+            class="p-error block"
+            *ngIf="
+              useForm.get('email')?.invalid && useForm.get('email')?.dirty
+            "
+            >Email is Required</small
+          > -->
+          </div>
+        </div>
+      </div>
+  
+      <!-- Residence Details -->
+      <h3>Residence Details</h3>
+      <div class="grid">
+        <div class="col-12">
+          <div class="field">
+            <label for="address" class="block">Street</label>
+            <input
+              type="text"
+              pInputText
+              placeholder="Street "
+              formControlName="address"
+              class="w-12"
+            />
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="field">
+            <label for="city" class="block">City</label>
+            <input
+              type="text"
+              pInputText
+              placeholder="City"
+              formControlName="city"
+              class="w-12"
+            />
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="field">
+            <label for="postalCode" class="block">Postal Code</label>
+            <input
+              type="text"
+              pInputText
+              placeholder="Postal Code"
+              formControlName="postalCode"
+              class="w-12"
+            />
+          </div>
+        </div>
+      </div>
+  
+      <!-- Form Buttons -->
+      <div>
+        <button
+          pButton
+          
+          label="Submit"
+          (click)="onSubmit()"
+          class="w-12"
+
+        ></button>
+        <div class="grid pt-3">
+          <div class="col-6">
+            <a routerLink="">
+              <button
+                pButton
+                type="button"
+                label="Back"
+                class="w-12 p-button-success"
+              ></button>
+            </a>
+          </div>
+          <div class="col-6">
+            <button
+              pButton
+              type="button"
+              label="Reset"
+              class="w-12 p-button-warning"
+            ></button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </p-card>
+  
