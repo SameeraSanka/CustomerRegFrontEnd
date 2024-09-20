@@ -25,7 +25,6 @@ export class MainService {
       this.sweetAlertService.error("An error occurred while fetching the customer.");
       throw error;
     }
-
   }
 
   async addCustomer(obj: Customer): Promise<APIResponceModel> {
@@ -57,17 +56,14 @@ export class MainService {
   async updateCustomer(id: number, customerData: any): Promise<APIResponceModel> {
     try {
       const response: APIResponceModel = await lastValueFrom(this.http.put<APIResponceModel>(environment.BASE_URL + `/${id}`, customerData));
-      if (response.isSuccess){
+      if (response.isSuccess) {
         this.sweetAlertService.success("Customer updated successfully");
-
       }
       return response;
     } catch (error) {
       this.sweetAlertService.error("An error occurred while drleting the customer.");
       throw error;
     }
-
-
   }
 
   // async updateCustomer(id: number, customerData: any): Promise<APIResponceModel> {

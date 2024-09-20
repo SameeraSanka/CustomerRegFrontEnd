@@ -36,7 +36,6 @@ export class AddCustomerComponent {
     // debugger;
     const customerData: Customer = this.userForm.value;
     this.customerService.addCustomer(customerData).then
-        this.userForm.reset();
-      
+        this.userForm.reset(); 
   }
 }

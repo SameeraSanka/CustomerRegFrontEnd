@@ -42,9 +42,7 @@ export class UpdateCustomerComponent implements OnInit {
     if (customer) {
       this.customerObj = customer;
       this.getCustomerDetails(customer);
-    } else {
-      console.error('Customer data not passed correctly.');
-    }
+    } 
   }
 
   getCustomerDetails(customer: Customer) {

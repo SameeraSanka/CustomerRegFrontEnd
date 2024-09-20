@@ -4,7 +4,7 @@ import { AddCustomerComponent } from './Components/Customer/add-customer/add-cus
 import { UpdateCustomerComponent } from './Components/Customer/update-customer/update-customer.component';
 
 export const routes: Routes = [
-    {path: '', component: ViewCustomerComponent},
-    {path: 'AddCustomer', component: AddCustomerComponent},
+    { path: '', component: ViewCustomerComponent },
+    { path: 'AddCustomer', component: AddCustomerComponent },
     { path: 'UpdateCustomer/:customerId', component: UpdateCustomerComponent }
 ];
